@@ -21,21 +21,22 @@ public class JugadoresController : Controller
 
     public IActionResult Create()
     {
-        ViewBag.Equipos = new SelectList(_context.Equipos, "Id", "Nombre");
+        ViewBag.Equipos = _context.Equipos.ToList();
         return View();
     }
 
     [HttpPost]
-    public IActionResult Create(Jugador jugador)
+    [ValidateAntiForgeryToken]
+    
+    public IActionResult Create([Bind("Nombre,Edad,EquipoId")] Jugador jugador)
     {
         if (ModelState.IsValid)
         {
-            _context.Jugadores.Add(jugador);
+            _context.Add(jugador);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index)); // Redirige a la lista de jugadores
         }
-
-        ViewBag.Equipos = new SelectList(_context.Equipos, "Id", "Nombre", jugador.EquipoId);
         return View(jugador);
     }
+    
 }
