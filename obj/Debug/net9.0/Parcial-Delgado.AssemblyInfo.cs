@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Parcial-Delgado")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066a1f9344d9cf3d54ee69cac07f5ac2bc40eb25")]
 [assembly: System.Reflection.AssemblyProductAttribute("Parcial-Delgado")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Parcial-Delgado")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
