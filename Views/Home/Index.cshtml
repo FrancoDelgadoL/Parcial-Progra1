@@ -1,0 +1,33 @@
+﻿@model List<Parcial_Delgado.Models.Jugador>
+
+<h2>Lista de Jugadores</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Equipo</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+       @foreach (var jugador in Model)
+       {
+            <tr>
+                <td>@jugador.Nombre</td>
+                <td>@jugador.Edad</td>
+                <td>@jugador.Equipo?.Nombre</td>
+            </tr>
+       }
+    }
+    else
+    {
+      <tr>
+        <td colspan="3">No hay jugadores disponibles.</td>
+      </tr>
+    }
+    </tbody>
+</table>
+<a href="/Jugadores/Create" class="btn btn-primary">Agregar Jugador</a>
+
